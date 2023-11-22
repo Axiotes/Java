@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Principal {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		Produtos p = new Produtos();
 		
 		// Instanciamentos Roupa
 		Roupa camisa = new Roupa("Camisa", 60, 30);
@@ -18,13 +17,13 @@ public class Principal {
 		Eletronicos computador = new Eletronicos("Computador", 2000, 220, 25);
 		Eletronicos tv = new Eletronicos("TV", 1800, 220, 2);
 		
-		int op = 0;
+		int op = 0, confirmar = 0;
 		
 		while (op != 3) { // LOOP MENU VENDAS
 			System.out.println("-------- MENU VENDAS ONLINE --------\n"
-							+ "Digite 1: ROUPAS\n"
-							+ "Digite 2: ELETRÔNICOS\n"
-							+ "Digite 3: SAIR");
+					+ "Digite 1: ROUPAS\n"
+					+ "Digite 2: ELETRÔNICOS\n"
+					+ "Digite 3: SAIR");
 			op = scan.nextInt(); // Selecionar opção do menu vendas online
 			
 			switch (op) { // switch OPÇÃO NO MENU VENDAS ONLINE
@@ -33,11 +32,11 @@ public class Principal {
 				
 				while (opRoupa != 5) { // LOOP MENU ROUPAS
 					System.out.println("-------- MENU ROUPAS --------\n"
-									+ "Digite 1: " + camisa.getNome() + " - Preço: " + camisa.getPreco()
-									+ "\nDigite 2: " + calca.getNome() + " - Preço: " + calca.getPreco()
-									+ "\nDigite 3: " + bermuda.getNome() + " - Preço: " + bermuda.getPreco()
-									+ "\nDigite 4: " + vestido.getNome() + " - Preço: " + vestido.getPreco()
-									+ "\nDigite 5: VOLTAR");
+							+ "Digite 1: " + camisa.getNome() + " - Preço: " + camisa.getPreco()
+							+ "\nDigite 2: " + calca.getNome() + " - Preço: " + calca.getPreco()
+							+ "\nDigite 3: " + bermuda.getNome() + " - Preço: " + bermuda.getPreco()
+							+ "\nDigite 4: " + vestido.getNome() + " - Preço: " + vestido.getPreco()
+							+ "\nDigite 5: VOLTAR");
 					opRoupa = scan.nextInt(); // Selecionar opção menu roupas
 					
 					switch (opRoupa) { // switch OPÇÃO NO MENU ROUPAS
@@ -46,8 +45,8 @@ public class Principal {
 							// TEM ROUPA NO ESTOQUE
 						
 							System.out.println("--------------------------\n"
-											+ "Quantidade em estoque: " + camisa.getQuantidadeEmEstoque()
-											+ "\nDigite a cor desejada:");
+									+ "Quantidade em estoque: " + camisa.getQuantidadeEmEstoque()
+									+ "\nDigite a cor desejada:");
 							camisa.setCor(scan.next()); // Mostrar a quantidade em estoque e digitar cor 
 							
 							System.out.println("Digite o tamanho da camisa:");
@@ -58,18 +57,16 @@ public class Principal {
 							
 							camisa.setValorFinal(camisa.custoEnvio() + camisa.getPreco()); // Calculo custo de envio e preço final
 							
-							int confirmar = 0;
-							
 							System.out.println("-------------------------\n"
-											+ "Roupa: " + camisa.getNome()
-											+ "\nCor: " + camisa.getCor()
-											+ "\nTamanho: " + camisa.getTamanho()
-											+ "\nPreço da roupa: " + camisa.getPreco()
-											+ "\nCusto de envio: " + camisa.custoEnvio()
-											+ "\nPreço final: " + camisa.getValorFinal()
-											+ "\n-------------------------"
-											+ "\nDigite 1: CONFIRMAR COMPRA"
-											+ "\nDigite 2: CANCELAR COMPRA");
+									+ "Roupa: " + camisa.getNome()
+									+ "\nCor: " + camisa.getCor()
+									+ "\nTamanho: " + camisa.getTamanho()
+									+ "\nPreço da roupa: " + camisa.getPreco()
+									+ "\nCusto de envio: " + camisa.custoEnvio()
+									+ "\nPreço final: " + camisa.getValorFinal()
+									+ "\n-------------------------"
+									+ "\nDigite 1: CONFIRMAR COMPRA"
+									+ "\nDigite 2: CANCELAR COMPRA");
 							confirmar = scan.nextInt(); // Mostrar informações da compra e selecionar confirmação
 							
 							switch (confirmar) { // switch CONFIRMAÇÃO DE COMPRA
@@ -101,8 +98,8 @@ public class Principal {
 							// TEM ROUPA NO ESTOQUE
 						
 							System.out.println("--------------------------\n"
-											+ "Quantidade em estoque: " + calca.getQuantidadeEmEstoque()
-											+ "\nDigite a cor desejada:");
+									+ "Quantidade em estoque: " + calca.getQuantidadeEmEstoque()
+									+ "\nDigite a cor desejada:");
 							calca.setCor(scan.next()); // Mostrar a quantidade em estoque e digitar cor 
 							
 							System.out.println("Digite o tamanho da calça:");
@@ -113,18 +110,16 @@ public class Principal {
 							
 							calca.setValorFinal(calca.custoEnvio() + calca.getPreco()); // Calculo custo de envio e preço final
 							
-							int confirmar = 0;
-							
 							System.out.println("-------------------------\n"
-											+ "Roupa: " + calca.getNome()
-											+ "\nCor: " + calca.getCor()
-											+ "\nTamanho: " + calca.getTamanho()
-											+ "\nPreço da roupa: " + calca.getPreco()
-											+ "\nCusto de envio: " + calca.custoEnvio()
-											+ "\nPreço final: " + calca.getValorFinal()
-											+ "\n-------------------------"
-											+ "\nDigite 1: CONFIRMAR COMPRA"
-											+ "\nDigite 2: CANCELAR COMPRA");
+									+ "Roupa: " + calca.getNome()
+									+ "\nCor: " + calca.getCor()
+									+ "\nTamanho: " + calca.getTamanho()
+									+ "\nPreço da roupa: " + calca.getPreco()
+									+ "\nCusto de envio: " + calca.custoEnvio()
+									+ "\nPreço final: " + calca.getValorFinal()
+									+ "\n-------------------------"
+									+ "\nDigite 1: CONFIRMAR COMPRA"
+									+ "\nDigite 2: CANCELAR COMPRA");
 							confirmar = scan.nextInt(); // Mostrar informações da compra e selecionar confirmação
 							
 							switch (confirmar) { // switch CONFIRMAÇÃO DE COMPRA
@@ -156,8 +151,8 @@ public class Principal {
 							// TEM ROUPA NO ESTOQUE
 						
 							System.out.println("--------------------------\n"
-											+ "Quantidade em estoque: " + bermuda.getQuantidadeEmEstoque()
-											+ "\nDigite a cor desejada:");
+									+ "Quantidade em estoque: " + bermuda.getQuantidadeEmEstoque()
+									+ "\nDigite a cor desejada:");
 							bermuda.setCor(scan.next()); // Mostrar a quantidade em estoque e digitar cor 
 							
 							System.out.println("Digite o tamanho da calça:");
@@ -168,18 +163,16 @@ public class Principal {
 							
 							bermuda.setValorFinal(bermuda.custoEnvio() + bermuda.getPreco()); // Calculo custo de envio e preço final
 							
-							int confirmar = 0;
-							
 							System.out.println("-------------------------\n"
-											+ "Roupa: " + bermuda.getNome()
-											+ "\nCor: " + bermuda.getCor()
-											+ "\nTamanho: " + bermuda.getTamanho()
-											+ "\nPreço da roupa: " + bermuda.getPreco()
-											+ "\nCusto de envio: " + bermuda.custoEnvio()
-											+ "\nPreço final: " + bermuda.getValorFinal()
-											+ "\n-------------------------"
-											+ "\nDigite 1: CONFIRMAR COMPRA"
-											+ "\nDigite 2: CANCELAR COMPRA");
+									+ "Roupa: " + bermuda.getNome()
+									+ "\nCor: " + bermuda.getCor()
+									+ "\nTamanho: " + bermuda.getTamanho()
+									+ "\nPreço da roupa: " + bermuda.getPreco()
+									+ "\nCusto de envio: " + bermuda.custoEnvio()
+									+ "\nPreço final: " + bermuda.getValorFinal()
+									+ "\n-------------------------"
+									+ "\nDigite 1: CONFIRMAR COMPRA"
+									+ "\nDigite 2: CANCELAR COMPRA");
 							confirmar = scan.nextInt(); // Mostrar informações da compra e selecionar confirmação
 							
 							switch (confirmar) { // switch CONFIRMAÇÃO DE COMPRA
@@ -211,8 +204,8 @@ public class Principal {
 							// TEM ROUPA NO ESTOQUE
 						
 							System.out.println("--------------------------\n"
-											+ "Quantidade em estoque: " + vestido.getQuantidadeEmEstoque()
-											+ "\nDigite a cor desejada:");
+									+ "Quantidade em estoque: " + vestido.getQuantidadeEmEstoque()
+									+ "\nDigite a cor desejada:");
 							vestido.setCor(scan.next()); // Mostrar a quantidade em estoque e digitar cor 
 							
 							System.out.println("Digite o tamanho da calça:");
@@ -223,18 +216,16 @@ public class Principal {
 							
 							vestido.setValorFinal(vestido.custoEnvio() + vestido.getPreco()); // Calculo custo de envio e preço final
 							
-							int confirmar = 0;
-							
 							System.out.println("-------------------------\n"
-											+ "Roupa: " + vestido.getNome()
-											+ "\nCor: " + vestido.getCor()
-											+ "\nTamanho: " + vestido.getTamanho()
-											+ "\nPreço da roupa: " + vestido.getPreco()
-											+ "\nCusto de envio: " + vestido.custoEnvio()
-											+ "\nPreço final: " + vestido.getValorFinal()
-											+ "\n-------------------------"
-											+ "\nDigite 1: CONFIRMAR COMPRA"
-											+ "\nDigite 2: CANCELAR COMPRA");
+									+ "Roupa: " + vestido.getNome()
+									+ "\nCor: " + vestido.getCor()
+									+ "\nTamanho: " + vestido.getTamanho()
+									+ "\nPreço da roupa: " + vestido.getPreco()
+									+ "\nCusto de envio: " + vestido.custoEnvio()
+									+ "\nPreço final: " + vestido.getValorFinal()
+									+ "\n-------------------------"
+									+ "\nDigite 1: CONFIRMAR COMPRA"
+									+ "\nDigite 2: CANCELAR COMPRA");
 							confirmar = scan.nextInt(); // Mostrar informações da compra e selecionar confirmação
 							
 							switch (confirmar) { // switch CONFIRMAÇÃO DE COMPRA
@@ -262,8 +253,6 @@ public class Principal {
 					// Fim case 4 VESTIDO
 						
 					case 5: // VOLTAR
-						System.out.println("");
-						
 						break;
 					// Fim case 5 VOLTAR
 						
@@ -280,10 +269,10 @@ public class Principal {
 				
 				while (opEletronico != 4) { // LOOP MENU ELETRÔNICOS
 					System.out.println("-------- MENU ELETRÔNICOS --------\n"
-									+ "\nDigite 1: " + celular.getNome() + " - Preço: " + celular.getPreco()
-									+ "\nDigite 2: " + computador.getNome() + " - Preço: " + computador.getPreco()
-									+ "\nDigite 3: " + tv.getNome() + " - Preço: " + tv.getPreco()
-									+ "\nDigite 4: VOLTAR");
+						+ "Digite 1: " + celular.getNome() + " - Preço: " + celular.getPreco()
+						+ "\nDigite 2: " + computador.getNome() + " - Preço: " + computador.getPreco()
+						+ "\nDigite 3: " + tv.getNome() + " - Preço: " + tv.getPreco()
+						+ "\nDigite 4: VOLTAR");
 					opEletronico = scan.nextInt(); // Selecionar opção menu eletrônico
 					
 					switch (opEletronico) { // switch OPÇÃO NO MENU ELETRÔNICO
@@ -294,20 +283,18 @@ public class Principal {
 							celular.setValorFinal(celular.custoEnvio() + celular.getPreco()); // Calculo do custo de envio e preço final
 							
 							System.out.println("--------------------------\n"
-											+ "Quantidade em estoque:" + celular.getQuantidadeEmEstoque()
-											+ "\n-------------------------"
-											+ "\nEletrônico: " + celular.getNome()
-											+ "\nVoltagem: " + celular.getVoltagem()
-											+ "\nPreço: " + celular.getPreco()
-											+ "\nCusto de envio: " + celular.custoEnvio()
-											+ "\nPreço final: " + celular.getValorFinal());
+									+ "Quantidade em estoque:" + celular.getQuantidadeEmEstoque()
+									+ "\n-------------------------"
+									+ "\nEletrônico: " + celular.getNome()
+									+ "\nVoltagem: " + celular.getVoltagem()
+									+ "\nPreço: " + celular.getPreco()
+									+ "\nCusto de envio: " + celular.custoEnvio()
+									+ "\nPreço final: " + celular.getValorFinal());
 							// Quantidade em estoque e informações da compra
 							
-							int confirmar = 0;
-							
 							System.out.println("-------------------------\n"
-											+ "Digite 1: CONFIRMAR COMPRA\n"
-											+ "Digite 2: CANCELAR COMPRA");
+									+ "Digite 1: CONFIRMAR COMPRA\n"
+									+ "Digite 2: CANCELAR COMPRA");
 							confirmar = scan.nextInt(); // Confirmação da compra
 							
 							switch (confirmar) {
@@ -341,20 +328,18 @@ public class Principal {
 							computador.setValorFinal(computador.custoEnvio() + computador.getPreco()); // Calculo do custo de envio e preço final
 							
 							System.out.println("--------------------------\n"
-											+ "Quantidade em estoque:" + computador.getQuantidadeEmEstoque()
-											+ "\n-------------------------"
-											+ "\nEletrônico: " + computador.getNome()
-											+ "\nVoltagem: " + computador.getVoltagem()
-											+ "\nPreço: " + computador.getPreco()
-											+ "\nCusto de envio: " + computador.custoEnvio()
-											+ "\nPreço final: " + computador.getValorFinal());
+									+ "Quantidade em estoque:" + computador.getQuantidadeEmEstoque()
+									+ "\n-------------------------"
+									+ "\nEletrônico: " + computador.getNome()
+									+ "\nVoltagem: " + computador.getVoltagem()
+									+ "\nPreço: " + computador.getPreco()
+									+ "\nCusto de envio: " + computador.custoEnvio()
+									+ "\nPreço final: " + computador.getValorFinal());
 							// Quantidade em estoque e informações da compra
 							
-							int confirmar = 0;
-							
 							System.out.println("-------------------------\n"
-											+ "Digite 1: CONFIRMAR COMPRA\n"
-											+ "Digite 2: CANCELAR COMPRA");
+									+ "Digite 1: CONFIRMAR COMPRA\n"
+									+ "Digite 2: CANCELAR COMPRA");
 							confirmar = scan.nextInt(); // Confirmação da compra
 							
 							switch (confirmar) {
@@ -388,16 +373,14 @@ public class Principal {
 							tv.setValorFinal(tv.custoEnvio() + tv.getPreco()); // Calculo do custo de envio e preço final
 							
 							System.out.println("--------------------------\n"
-											+ "Quantidade em estoque:" + tv.getQuantidadeEmEstoque()
-											+ "\n-------------------------"
-											+ "\nEletrônico: " + tv.getNome()
-											+ "\nVoltagem: " + tv.getVoltagem()
-											+ "\nPreço: " + tv.getPreco()
-											+ "\nCusto de envio: " + tv.custoEnvio()
-											+ "\nPreço final: " + tv.getValorFinal());
+									+ "Quantidade em estoque:" + tv.getQuantidadeEmEstoque()
+									+ "\n-------------------------"
+									+ "\nEletrônico: " + tv.getNome()
+									+ "\nVoltagem: " + tv.getVoltagem()
+									+ "\nPreço: " + tv.getPreco()
+									+ "\nCusto de envio: " + tv.custoEnvio()
+									+ "\nPreço final: " + tv.getValorFinal());
 							// Quantidade em estoque e informações da compra
-							
-							int confirmar = 0;
 							
 							System.out.println("-------------------------\n"
 											+ "Digite 1: CONFIRMAR COMPRA\n"
